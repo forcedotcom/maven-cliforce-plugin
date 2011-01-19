@@ -16,7 +16,7 @@ import java.io.*;
  * @goal force
  * @phase process-test-classes
  */
-public class ForceMojo
+public class CliforceMojo
         extends AbstractMojo {
 
     /**

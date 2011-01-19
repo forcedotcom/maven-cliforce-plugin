@@ -3,7 +3,7 @@
         <plugins>
             <plugin>
                 <groupId>com.force.maven.plugin</groupId>
-                <artifactId>maven-vmforce-plugin</artifactId>
+                <artifactId>maven-cliforce-plugin</artifactId>
                 <configuration>
                     <forceScript>${basedir}/target/test-classes/testForceScript.fs</forceScript>
                 </configuration>

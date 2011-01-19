@@ -2,10 +2,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.force.maven.plugin</groupId>
-    <artifactId>maven-vmforce-plugin</artifactId>
+    <artifactId>maven-cliforce-plugin</artifactId>
     <packaging>maven-plugin</packaging>
     <version>0.0.2-SNAPSHOT</version>
-    <name>maven-vmforce-plugin</name>
+    <name>maven-cliforce-plugin</name>
     <properties>
         <!--tests resource filtering on a script-->
         <plugin>plugin</plugin>
@@ -57,9 +57,9 @@
         </snapshotRepository>
     </distributionManagement>
     <scm>
-        <connection>scm:git:git://github.com/sclasen/maven-vmforce-plugin.git</connection>
-        <developerConnection>scm:git:git@github.com:sclasen/maven-vmforce-plugin.git</developerConnection>
-        <url>http://github.com/sclasen/maven-vmforce-plugin</url>
+        <connection>scm:git:git://github.com/forcedotcom/maven-cliforce-plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:forcedotcom/maven-cliforce-plugin.git</developerConnection>
+        <url>http://github.com/forcedotcom/maven-cliforce-plugin</url>
     </scm>
     <dependencies>
         <dependency>

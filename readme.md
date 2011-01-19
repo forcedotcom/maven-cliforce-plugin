@@ -1,4 +1,4 @@
-#maven-vmforce-plugin
+#maven-cliforce-plugin
 
 This is a maven plugin that lets you execute cliforce scripts as part of your maven build.
 
@@ -32,13 +32,13 @@ after integration tests.
 
             <plugin>
                 <groupId>com.force.maven.plugin</groupId>
-                <artifactId>maven-vmforce-plugin</artifactId>
+                <artifactId>maven-cliforce-plugin</artifactId>
                 <executions>
                     <execution>
                         <id>pre</id>
                         <phase>pre-integration-test</phase>
                         <goals>
-                            <goal>force</goal>
+                            <goal>exec</goal>
                         </goals>
                         <configuration>
                             <forceScript>target/test-classes/setupIntegrationTest.fs</forceScript>
@@ -48,7 +48,7 @@ after integration tests.
                         <id>pre</id>
                         <phase>post-integration-test</phase>
                         <goals>
-                            <goal>force</goal>
+                            <goal>exec</goal>
                         </goals>
                         <configuration>
                             <forceScript>target/test-classes/cleanupIntegrationTest.fs</forceScript>
@@ -94,8 +94,8 @@ to your maven settings.xml
 
 This will shorten the command you have to type from
 
-    mvn com.force.maven.plugin:maven-vmforce-plugin:force -Dforce.script=path/to/script
+    mvn com.force.maven.plugin:maven-cliforce-plugin:exec -Dforce.script=path/to/script
 
 to
 
-    mvn vmforce:force -Dforce.script=path/to/script
+    mvn cliforce:exec -Dforce.script=path/to/script

@@ -9,7 +9,7 @@ public class ForceMojoTest {
 
     @Test
     public void testPlugin() throws Exception {
-        ForceMojo mojo = new ForceMojo();
+        CliforceMojo mojo = new CliforceMojo();
         mojo.forceScript = new File("target/test-classes/testForceScript.fs");
         mojo.execute();
     }
