@@ -13,8 +13,7 @@ import java.io.*;
 /**
  * Execute a force script as part of a maven build.
  *
- * @goal force
- * @phase process-test-classes
+ * @goal exec
  */
 public class CliforceMojo
         extends AbstractMojo {
