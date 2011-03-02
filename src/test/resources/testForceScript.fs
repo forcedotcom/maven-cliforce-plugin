@@ -1,8 +1,8 @@
-plugin -a cliplugin -v 1.0
+plugin cliplugin
 cliplugin:hello
 unplug cliplugin
 help ${plugin}
-help ${project.artifactId}-${project.version}.${project.packaging}
-list
-apps
+help
+db:list
+app:apps
 exit

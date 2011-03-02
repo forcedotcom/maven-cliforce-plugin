@@ -40,21 +40,21 @@ public class CliforceMojo
             try {
                 FileInputStream in = new FileInputStream(forceScript);
                 ForceEnv env = new ForceEnv(forceEnv);
-                final CLIForce cliForce = new CLIForce(env);
+                final CLIForce cliForce = CLIForce.getInstance();
                 cliForce.init(in, new PrintWriter(System.out, true));
                 cliForce.run();
                 Thread.sleep(1000);
                 System.out.println();
             } catch (FileNotFoundException e) {
                 getLog().error("forceScript file not found", e);
-            } catch (ConnectionException e) {
-                getLog().error("error initializing force connection", e);
             } catch (ServletException e) {
                 getLog().error("error initializing force connection", e);
             } catch (IOException e) {
                 getLog().error("error initializing force connection", e);
             } catch (InterruptedException e) {
                 getLog().error(e);
+            } catch (ConnectionException e) {
+                getLog().error("Error initializing force connection", e);
             }
 
         } else {
