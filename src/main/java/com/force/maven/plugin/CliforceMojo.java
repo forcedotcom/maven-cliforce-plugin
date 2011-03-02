@@ -39,9 +39,11 @@ public class CliforceMojo
 
             try {
                 FileInputStream in = new FileInputStream(forceScript);
-                ForceEnv env = new ForceEnv(forceEnv);
                 final CLIForce cliForce = CLIForce.getInstance();
                 cliForce.init(in, new PrintWriter(System.out, true));
+                if(forceEnv != null){
+                    cliForce.setCurrentEnvironment(forceEnv);
+                }
                 cliForce.run();
                 Thread.sleep(1000);
                 System.out.println();
