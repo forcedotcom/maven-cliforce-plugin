@@ -2,7 +2,8 @@ package com.force.maven.plugin;
 
 
 import com.force.cliforce.CLIForce;
-import com.force.cliforce.ForceEnv;
+import com.force.cliforce.MainModule;
+import com.google.inject.Guice;
 import com.sforce.ws.ConnectionException;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
@@ -39,9 +40,9 @@ public class CliforceMojo
 
             try {
                 FileInputStream in = new FileInputStream(forceScript);
-                final CLIForce cliForce = CLIForce.getInstance();
+                final CLIForce cliForce = Guice.createInjector(new MainModule()).getInstance(CLIForce.class);
                 cliForce.init(in, new PrintWriter(System.out, true));
-                if(forceEnv != null){
+                if (forceEnv != null) {
                     cliForce.setCurrentEnvironment(forceEnv);
                 }
                 cliForce.run();
