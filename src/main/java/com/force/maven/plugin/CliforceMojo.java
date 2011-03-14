@@ -4,6 +4,7 @@ package com.force.maven.plugin;
 import com.force.cliforce.CLIForce;
 import com.force.cliforce.MainModule;
 import com.google.inject.Guice;
+import com.google.inject.Module;
 import com.sforce.ws.ConnectionException;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
@@ -34,13 +35,19 @@ public class CliforceMojo
      */
     File forceScript;
 
+    /**
+     * Guice Module to use to wire up CLIForce.
+     * TODO should this be configurable in the plugin?
+     */
+    Module guiceModule = new MainModule();
+
     public void execute()
             throws MojoExecutionException {
         if (forceScript.exists()) {
 
             try {
                 FileInputStream in = new FileInputStream(forceScript);
-                final CLIForce cliForce = Guice.createInjector(new MainModule()).getInstance(CLIForce.class);
+                final CLIForce cliForce = Guice.createInjector(guiceModule).getInstance(CLIForce.class);
                 cliForce.init(in, new PrintWriter(System.out, true));
                 if (forceEnv != null) {
                     cliForce.setCurrentEnvironment(forceEnv);

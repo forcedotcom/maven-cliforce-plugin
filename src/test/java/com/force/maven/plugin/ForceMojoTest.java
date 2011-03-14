@@ -10,6 +10,7 @@ public class ForceMojoTest {
     @Test
     public void testPlugin() throws Exception {
         CliforceMojo mojo = new CliforceMojo();
+        mojo.guiceModule = new MojoTestModule();
         mojo.forceScript = new File("target/test-classes/testForceScript.fs");
         mojo.execute();
     }
