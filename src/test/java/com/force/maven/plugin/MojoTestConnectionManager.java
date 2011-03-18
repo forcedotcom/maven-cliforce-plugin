@@ -10,8 +10,9 @@ public class MojoTestConnectionManager extends MainConnectionManager {
     }
 
     @Override
-    public boolean loadLogin() {
-        return true;
+    public void loadLogin() {
+
     }
+
 }
 
