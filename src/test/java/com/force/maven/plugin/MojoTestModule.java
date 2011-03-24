@@ -5,6 +5,8 @@ import com.force.cliforce.ConnectionManager;
 import com.force.cliforce.MainModule;
 
 import javax.inject.Singleton;
+import java.util.Collections;
+import java.util.Set;
 
 public class MojoTestModule extends MainModule {
 
@@ -14,7 +16,7 @@ public class MojoTestModule extends MainModule {
     }
 
     @Override
-    public String[] provideInternalPlugins() {
-        return new String[0];
+    public Set<String> provideInternalPlugins() {
+        return Collections.emptySet();
     }
 }
